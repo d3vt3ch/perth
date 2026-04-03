@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perth Travel Itinerary</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
-        /* CSS Variables */
+    <style>
         :root {
             --deep-teal: #006D77;
             --soft-mint: #83C5BE;
@@ -22,14 +21,14 @@
             --success: #00b894;
         }
 
-* {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
 
-body {
+        body {
             background-color: var(--sand);
             background-image: url('https://images.unsplash.com/photo-1580501170888-8066471f0ea8?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
@@ -42,7 +41,7 @@ body {
             padding: 20px 10px;
         }
 
-.app-container {
+        .app-container {
             width: 100%;
             max-width: 480px;
             background: var(--white-glass);
@@ -57,7 +56,7 @@ body {
             position: relative;
         }
 
-.header {
+        .header {
             padding: 20px 20px 15px 20px;
             background: var(--deep-teal);
             color: white;
@@ -66,20 +65,10 @@ body {
             border-bottom-right-radius: 20px;
         }
 
-.header h1 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
+        .header h1 { font-size: 1.4rem; font-weight: 600; margin-bottom: 5px; }
+        .header h2 { font-size: 0.85rem; font-weight: 400; opacity: 0.9; margin-bottom: 10px; }
 
-.header h2 {
-            font-size: 0.85rem;
-            font-weight: 400;
-            opacity: 0.9;
-            margin-bottom: 10px;
-        }
-
-.cost-summary {
+        .cost-summary {
             background: rgba(255, 255, 255, 0.2);
             display: inline-block;
             padding: 5px 15px;
@@ -89,7 +78,6 @@ body {
             margin-top: 5px;
         }
 
-/* Attire Suggestion Box */
         .attire-box {
             background: rgba(237, 246, 249, 0.9);
             border: 1px dashed var(--deep-teal);
@@ -102,12 +90,8 @@ body {
             align-items: center;
             gap: 10px;
         }
-        .attire-box i {
-            font-size: 1.2rem;
-            color: var(--deep-teal);
-        }
+        .attire-box i { font-size: 1.2rem; color: var(--deep-teal); }
 
-/* Time & Countdown Widget */
         .time-widget {
             background: rgba(255, 255, 255, 0.9);
             border: 1px solid var(--soft-mint);
@@ -127,30 +111,14 @@ body {
             padding-bottom: 8px;
             border-bottom: 1px solid rgba(0, 109, 119, 0.1);
         }
-        .clocks i { margin-right: 3px; }
 
-.countdown {
-            font-size: 0.9rem;
-            color: var(--text-dark);
-        }
-        .highlight-time {
-            color: var(--danger);
-            font-weight: 700;
-            background: #ffeaa7;
-            padding: 2px 6px;
-            border-radius: 6px;
-        }
+        .countdown { font-size: 0.9rem; color: var(--text-dark); }
+        .highlight-time { color: var(--danger); font-weight: 700; background: #ffeaa7; padding: 2px 6px; border-radius: 6px; }
 
-.day-selector {
-            display: flex;
-            overflow-x: auto;
-            padding: 10px 10px 15px 10px;
-            gap: 10px;
-            scrollbar-width: none;
-        }
+        .day-selector { display: flex; overflow-x: auto; padding: 10px 10px 15px 10px; gap: 10px; scrollbar-width: none; }
         .day-selector::-webkit-scrollbar { display: none; }
 
-.tab-btn {
+        .tab-btn {
             background: rgba(255, 255, 255, 0.5);
             border: 1px solid var(--soft-mint);
             padding: 8px 16px;
@@ -162,974 +130,202 @@ body {
             transition: all 0.3s ease;
         }
 
-.tab-btn.active {
+        .tab-btn.active {
             background: var(--deep-teal);
             color: white;
             border-color: var(--deep-teal);
             box-shadow: 0 4px 10px rgba(0, 109, 119, 0.3);
         }
 
-.day-content {
-            display: none;
-            padding: 0 20px 20px 20px;
-            flex-grow: 1;
-            overflow-y: auto;
-        }
-        .day-content.active {
-            display: block;
-            animation: fadeIn 0.4s ease;
+        .day-content { display: none; padding: 0 20px 20px 20px; flex-grow: 1; overflow-y: auto; }
+        .day-content.active { display: block; animation: fadeIn 0.4s ease; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .hero-img { width: 100%; height: 150px; object-fit: cover; border-radius: 16px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .day-subtitle { text-align: center; font-size: 0.9rem; color: var(--deep-teal); font-weight: 600; margin-bottom: 15px; }
+
+        .map-btn {
+            display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+            background: var(--soft-mint); color: var(--deep-teal); text-decoration: none; padding: 12px;
+            border-radius: 12px; font-weight: 600; margin-bottom: 25px; transition: all 0.2s ease;
         }
 
-@keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before { content: ''; position: absolute; left: 9px; top: 0; bottom: 0; width: 2px; background: var(--soft-mint); }
+
+        .timeline-item {
+            position: relative; margin-bottom: 25px; padding: 15px; background: rgba(255, 255, 255, 0.6);
+            border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.8); transition: all 0.3s ease;
         }
 
-.hero-img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 16px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-.day-subtitle {
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--deep-teal);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-.map-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            background: var(--soft-mint);
-            color: var(--deep-teal);
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 12px;
-            font-weight: 600;
-            margin-bottom: 25px;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 8px rgba(131, 197, 190, 0.4);
-        }
-        .map-btn:hover {
-            background: var(--deep-teal);
-            color: white;
-        }
-
-.timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 9px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--soft-mint);
-        }
-
-.timeline-item {
-            position: relative;
-            margin-bottom: 25px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            transition: all 0.3s ease;
-        }
-
-.timeline-item.current-active {
-            border: 2px solid var(--deep-teal);
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 15px rgba(0, 109, 119, 0.2);
-            transform: scale(1.02);
-        }
+        .timeline-item.current-active { border: 2px solid var(--deep-teal); background: rgba(255, 255, 255, 0.9); transform: scale(1.02); }
         .timeline-item.current-active::after {
-            content: 'Current';
-            position: absolute;
-            top: -10px;
-            right: 15px;
-            background: var(--danger);
-            color: white;
-            font-size: 0.7rem;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-weight: 600;
-            animation: pulse 2s infinite;
+            content: 'Current'; position: absolute; top: -10px; right: 15px; background: var(--danger);
+            color: white; font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; animation: pulse 2s infinite;
         }
 
-@keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(225, 112, 85, 0.7); }
-            70% { box-shadow: 0 0 0 6px rgba(225, 112, 85, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(225, 112, 85, 0); }
-        }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(225, 112, 85, 0.7); } 70% { box-shadow: 0 0 0 6px rgba(225, 112, 85, 0); } 100% { box-shadow: 0 0 0 0 rgba(225, 112, 85, 0); } }
 
-.timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -26px;
-            top: 20px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--deep-teal);
-            border: 2px solid white;
-            box-shadow: 0 0 0 2px var(--soft-mint);
-        }
+        .timeline-item::before { content: ''; position: absolute; left: -26px; top: 20px; width: 12px; height: 12px; border-radius: 50%; background: var(--deep-teal); border: 2px solid white; }
 
-.transit-info {
-            position: absolute;
-            left: -33px;
-            bottom: -25px;
-            font-size: 0.75rem;
-            color: var(--text-light);
-            background: var(--sand);
-            padding: 2px 6px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            border: 1px solid var(--soft-mint);
-            z-index: 2;
-        }
+        .transit-info { position: absolute; left: -33px; bottom: -25px; font-size: 0.75rem; color: var(--text-light); background: var(--sand); padding: 2px 6px; border-radius: 10px; border: 1px solid var(--soft-mint); z-index: 2; display: flex; align-items: center; gap: 4px; }
 
-.item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 8px;
-        }
+        .item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+        .time-box { font-weight: 600; color: var(--deep-teal); font-size: 0.9rem; }
+        .duration { font-size: 0.7rem; color: var(--text-light); font-weight: 400; }
+        .activity-title { font-size: 1.05rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
 
-.time-box {
-            font-weight: 600;
-            color: var(--deep-teal);
-            font-size: 0.9rem;
-            display: flex;
-            flex-direction: column;
-        }
-        .duration {
-            font-size: 0.7rem;
-            color: var(--text-light);
-            font-weight: 400;
-        }
+        .tip-box { background: rgba(131, 197, 190, 0.15); border-left: 3px solid var(--deep-teal); padding: 8px 10px; border-radius: 0 8px 8px 0; margin-top: 10px; font-size: 0.75rem; line-height: 1.4; }
 
-.activity-title {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        .checkbox-container { display: flex; align-items: center; cursor: pointer; }
+        .checkbox-container input { display: none; }
+        .checkmark { width: 22px; height: 22px; border: 2px solid var(--soft-mint); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: transparent; transition: all 0.2s; }
+        .checkbox-container input:checked ~ .checkmark { background: var(--success); border-color: var(--success); color: white; }
 
-.tip-box {
-            background: rgba(131, 197, 190, 0.15);
-            border-left: 3px solid var(--deep-teal);
-            padding: 8px 10px;
-            border-radius: 0 8px 8px 0;
-            margin-top: 10px;
-            font-size: 0.75rem;
-            color: var(--text-dark);
-            line-height: 1.4;
-        }
-        .tip-box i {
-            color: #d35400;
-            margin-right: 5px;
-        }
+        .timeline-item.completed { opacity: 0.7; }
+        .timeline-item.completed .activity-title { text-decoration: line-through; color: var(--text-light); }
 
-.highlight-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            margin-top: 8px;
-        }
-        .highlight-tags span {
-            background: var(--soft-mint);
-            color: var(--deep-teal);
-            font-size: 0.7rem;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-weight: 600;
-        }
-
-.checkbox-container {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-        .checkbox-container input {
-            display: none;
-        }
-        .checkmark {
-            width: 22px;
-            height: 22px;
-            border: 2px solid var(--soft-mint);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: transparent;
-            transition: all 0.2s;
-        }
-        .checkbox-container input:checked ~ .checkmark {
-            background: var(--success);
-            border-color: var(--success);
-            color: white;
-        }
-
-.timeline-item.completed .activity-title {
-            text-decoration: line-through;
-            color: var(--text-light);
-        }
-        .timeline-item.completed {
-            opacity: 0.7;
-        }
-
-.cost-badge {
-            display: inline-block;
-            background: #fff3cd;
-            color: #856404;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            border: 1px solid #ffeeba;
-            margin-top: 5px;
-        }
-        .cost-free {
-            background: #d4edda;
-            color: #155724;
-            border-color: #c3e6cb;
-        }
+        .cost-badge { display: inline-block; background: #fff3cd; color: #856404; padding: 3px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; margin-top: 5px; }
+        .cost-free { background: #d4edda; color: #155724; }
     </style>
 </head>
 <body>
 
 <div class="app-container">
-        <header class="header">
-            <h1>Perth Family Adventure</h1>
-            <h2>April 6th - 12th | Autumn 14°C-25°C</h2>
-            <h2>Serene Escape, Aveley</h2>
-            <div class="cost-summary">
-                <i class="fa-solid fa-money-bill-wave"></i> <strong>Currency:</strong> 1 AUD ≈ RM 2.80
-            </div>
-        </header>
+    <header class="header">
+        <h1>Perth Family Adventure</h1>
+        <h2>April 6th - 12th | Autumn 14°C-25°C</h2>
+        <div class="cost-summary"><i class="fa-solid fa-money-bill-wave"></i> 1 AUD ≈ RM 2.80</div>
+    </header>
 
-<div class="time-widget">
-            <div class="clocks">
-                <div><i class="fa-regular fa-clock"></i> MYT: <span id="myt-time">--:--</span></div>
-                <div><i class="fa-regular fa-clock"></i> AWST: <span id="awst-time">--:--</span></div>
+    <div class="time-widget">
+        <div class="clocks">
+            <div><i class="fa-regular fa-clock"></i> MYT: <span id="myt-time">--:--</span></div>
+            <div><i class="fa-regular fa-clock"></i> AWST: <span id="awst-time">--:--</span></div>
+        </div>
+        <div class="countdown" id="activity-countdown">Loading schedule...</div>
+    </div>
+
+    <div class="day-selector">
+        <button class="tab-btn active" onclick="openDay('day1')">Day 1</button>
+        <button class="tab-btn" onclick="openDay('day2')">Day 2</button>
+        <button class="tab-btn" onclick="openDay('day3')">Day 3</button>
+        <button class="tab-btn" onclick="openDay('day4')">Day 4</button>
+        <button class="tab-btn" onclick="openDay('day5')">Day 5</button>
+        <button class="tab-btn" onclick="openDay('day6')">Day 6</button>
+    </div>
+
+    <div id="day1" class="day-content active"><div class="day-subtitle">DAY 1 ARRIVAL</div></div>
+    <div id="day2" class="day-content"><div class="day-subtitle">DAY 2 WILDLIFE</div></div>
+    <div id="day3" class="day-content"><div class="day-subtitle">DAY 3 TRAIN</div></div>
+    <div id="day4" class="day-content"><div class="day-subtitle">DAY 4 NORTH ADVENTURE</div></div>
+
+    <div id="day5" class="day-content">
+        <img src="https://res.cloudinary.com/simpleview/image/upload/v1700158503/clients/perthrto/111837_56_6b2bde4a-432f-4519-bc28-8ec886658328.jpg" alt="Perth Skyline" class="hero-img">
+        <div class="day-subtitle">CITY + FREMANTLE MARKETS + E SHED + COTTESLOE</div>
+
+        <a href="#" class="map-btn"><i class="fa-solid fa-location-arrow"></i> Navigate Day 5</a>
+
+        <div class="timeline">
+            <div class="timeline-item" data-start="14:45" data-end="16:00">
+                <div class="item-header">
+                    <div class="time-box">2:45 PM <span class="duration">1 Hr 15m</span></div>
+                    <label class="checkbox-container">
+                        <input type="checkbox" onchange="toggleComplete(this)">
+                        <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
+                    </label>
+                </div>
+                <div class="activity-title"><i class="fa-solid fa-store"></i> Fremantle Markets</div>
+                <div class="tip-box">Famous markets! Open Fridays. Grab Honey Cake.</div>
+                <div class="transit-info"><i class="fa-solid fa-car"></i> 5 Mins to E Shed</div>
             </div>
-            <div class="countdown" id="activity-countdown">
-                Loading schedule...
+
+            <div class="timeline-item" data-start="16:00" data-end="17:00">
+                <div class="item-header">
+                    <div class="time-box">4:00 PM <span class="duration">1 Hour</span></div>
+                    <label class="checkbox-container">
+                        <input type="checkbox" onchange="toggleComplete(this)">
+                        <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
+                    </label>
+                </div>
+                <div class="activity-title"><i class="fa-solid fa-gift"></i> E Shed Markets</div>
+                <div class="tip-box"><strong>Souvenirs:</strong> Best place for cheap T-shirts and magnets. Closes at 5:00 PM!</div>
+                <div class="transit-info"><i class="fa-solid fa-car"></i> 15 Mins to Beach</div>
+            </div>
+
+            <div class="timeline-item" data-start="17:15" data-end="20:00">
+                <div class="item-header">
+                    <div class="time-box">5:15 PM <span class="duration">Sunset</span></div>
+                </div>
+                <div class="activity-title"><i class="fa-solid fa-sun"></i> Cottesloe Beach Sunset</div>
             </div>
         </div>
+    </div>
 
-<div class="day-selector">
-            <button class="tab-btn active" onclick="openDay('day1')">Day 1</button>
-            <button class="tab-btn" onclick="openDay('day2')">Day 2</button>
-            <button class="tab-btn" onclick="openDay('day3')">Day 3</button>
-            <button class="tab-btn" onclick="openDay('day4')">Day 4</button>
-            <button class="tab-btn" onclick="openDay('day5')">Day 5</button>
-            <button class="tab-btn" onclick="openDay('day6')">Day 6</button>
-        </div>
-
-<div id="day1" class="day-content active">
-            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Arrival" class="hero-img">
-            <div class="day-subtitle">ARRIVAL + DFO + GROCERY (AIRPORT)</div>
-
-<div class="attire-box">
-                <i class="fa-solid fa-shirt"></i> 
-                <div><strong>Today's Attire:</strong> Comfortable travel wear and a light jacket for the evening.</div>
-            </div>
-
-<a href="https://www.google.com/maps/dir/Perth+Airport,+WA/DFO+Perth,+WA/Coles+Belmont,+WA/Aveley,+WA" target="_blank" class="map-btn">
-                <i class="fa-solid fa-location-arrow"></i> Navigate Day 1
-            </a>
-
-<div class="timeline">
-                <div class="timeline-item" data-start="14:50" data-end="16:00">
-                    <div class="item-header">
-                        <div class="time-box">2:50 PM <span class="duration">1 Hr 10 Mins</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-plane-arrival"></i> Land & Car Rental</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-car"></i> <strong>Logistics:</strong> Arrive at Perth Airport, collect the 12-seater rental car, and download offline maps before leaving the Wi-Fi zone.
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> ~10 mins to DFO</div>
-                </div>
-
-<div class="timeline-item" data-start="16:00" data-end="18:00">
-                    <div class="item-header">
-                        <div class="time-box">4:00 PM <span class="duration">2 Hours</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-tags"></i> DFO Perth</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-plane"></i> <strong>Shopping:</strong> DFO is right in the airport precinct! Great time to grab premium branded goods at discount prices right after landing. (Closes strictly at 6:00 PM).
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> 10 mins to Belmont Forum</div>
-                </div>
-
-<div class="timeline-item" data-start="18:00" data-end="19:30">
-                    <div class="item-header">
-                        <div class="time-box">6:00 PM <span class="duration">1.5 Hours</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-cart-shopping"></i> Coles Belmont Forum</div>
-                    <div class="cost-badge">Est: RM 100 - RM 150</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-basket-shopping"></i> <strong>Grocery Run:</strong> Belmont Forum is very close to the airport. Grab your essential groceries (water, snacks, breakfast items) before driving out to Aveley.
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> ~35 mins to Aveley</div>
-                </div>
-
-<div class="timeline-item" data-start="19:30" data-end="20:30">
-                    <div class="item-header">
-                        <div class="time-box">7:30 PM <span class="duration">1 Hour</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-house-chimney"></i> Drive & Check-In</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-key"></i> Head to Serene Escape, Aveley to check in, unpack, and freshen up.
-                    </div>
-                </div>
-
-<div class="timeline-item" data-start="20:30" data-end="23:59">
-                    <div class="item-header">
-                        <div class="time-box">8:30 PM <span class="duration">Relax</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-utensils"></i> Dinner at Homestay</div>
-                </div>
-            </div>
-        </div>
-
-<div id="day2" class="day-content">
-            <img src="https://www.aussieperthtours.com.au/wp-content/uploads/2020/03/124029-56-scaled.jpg" alt="Wildlife" class="hero-img">
-            <div class="day-subtitle">WILDLIFE + SWAN VALLEY ⭐⭐⭐⭐⭐</div>
-
-<div class="attire-box">
-                <i class="fa-solid fa-shirt"></i> 
-                <div><strong>Today's Attire:</strong> Casual, closed-toe walking shoes, hat, and sunglasses for the park.</div>
-            </div>
-
-<a href="https://www.google.com/maps/dir/Aveley,+WA/Caversham+Wildlife+Park,+WA/The+Margaret+River+Chocolate+Company,+West+Swan,+WA/Chemist+Warehouse+Ellenbrook,+WA/Aveley,+WA" target="_blank" class="map-btn">
-                <i class="fa-solid fa-location-arrow"></i> Navigate Day 2
-            </a>
-
-<div class="timeline">
-                <div class="timeline-item" data-start="09:00" data-end="12:30">
-                    <div class="item-header">
-                        <div class="time-box">9:00 AM <span class="duration">3.5 Hours</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-paw"></i> Caversham Wildlife Park</div>
-                    <div class="cost-badge">~RM 100 Adult | ~RM 48 Child</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-camera"></i> <strong>Activities:</strong> Hand-feed kangaroos, grab a photo with a Koala, and don't miss the interactive Farm Show. 
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> 15 min drive to Lunch</div>
-                </div>
-
-<div class="timeline-item" data-start="13:00" data-end="14:00">
-                    <div class="item-header">
-                        <div class="time-box">1:00 PM <span class="duration">1 Hour</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-box-open"></i> Packed Lunch</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-utensils"></i> Enjoy your packed lunch while relaxing in the beautiful Swan Valley area.
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> 5 min drive</div>
-                </div>
-
-<div class="timeline-item" data-start="14:15" data-end="15:30">
-                    <div class="item-header">
-                        <div class="time-box">2:15 PM <span class="duration">1 Hr 15 Mins</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-cookie-bite"></i> Chocolate Tasting</div>
-                    <div class="cost-badge cost-free">Free Entry & Tastings</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-ice-cream"></i> Visit Margaret River Chocolate Co. OR Whistler's. Perfect spot to grab edible souvenirs and free samples well before they close at 5 PM!
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> 15 min drive</div>
-                </div>
-
-<div class="timeline-item" data-start="16:00" data-end="18:00">
-                    <div class="item-header">
-                        <div class="time-box">4:00 PM <span class="duration">2 Hours</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-bag-shopping"></i> Chemist Warehouse</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-pills"></i> <strong>Shopping Session:</strong> Head to Ellenbrook for vitamins, skincare, and souvenirs. Excellent prices here compared to the city.
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> 5 min drive</div>
-                </div>
-
-<div class="timeline-item" data-start="18:30" data-end="22:00">
-                    <div class="item-header">
-                        <div class="time-box">6:30 PM <span class="duration">Evening</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-mug-hot"></i> Coles & Dinner</div>
-                </div>
-            </div>
-        </div>
-
-<div id="day3" class="day-content">
-            <img src="https://perthisok.com/thumbnails/cG9zdDoxNzEyNjY=.jpeg" alt="Train & City Night" class="hero-img">
-            <div class="day-subtitle">TRAIN + SWAN VALLEY + CITY NIGHT ⭐⭐⭐⭐⭐</div>
-
-<div class="attire-box">
-                <i class="fa-solid fa-shirt"></i> 
-                <div><strong>Today's Attire:</strong> Casual layers and comfortable walking shoes for the park and evening walk.</div>
-            </div>
-
-<a href="https://www.google.com/maps/dir/Aveley,+WA/Whiteman+Park,+WA/The+House+of+Honey,+Herne+Hill,+WA/Victoria+Park,+WA/Matagarup+Bridge,+WA" target="_blank" class="map-btn">
-                <i class="fa-solid fa-location-arrow"></i> Navigate Day 3
-            </a>
-
-<p style="text-align: center; font-size: 0.85rem; color: var(--deep-teal); margin-bottom: 15px; font-weight: 600;">👉 Kids highlight day</p>
-
-<div class="timeline">
-                <div class="timeline-item" data-start="09:30" data-end="13:00">
-                    <div class="item-header">
-                        <div class="time-box">9:30 AM <span class="duration">3.5 Hours</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-train"></i> Whiteman Park</div>
-                    <div class="highlight-tags">
-                        <span>🚂 Train Ride</span>
-                        <span>🛝 Playground</span>
-                    </div>
-                    <div class="cost-badge">~$10 AUD (~RM 28) Train Ride</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-ticket"></i> <strong>Tip:</strong> Buy vintage train tickets early. Great day to let the kids loose at the playground while you relax.
-                    </div>
-                </div>
-
-<div class="timeline-item" data-start="13:00" data-end="14:00">
-                    <div class="item-header">
-                        <div class="time-box">1:00 PM <span class="duration">1 Hour</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-utensils"></i> Lunch in the Park</div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> Short drive</div>
-                </div>
-
-<div class="timeline-item" data-start="14:15" data-end="16:00">
-                    <div class="item-header">
-                        <div class="time-box">2:15 PM <span class="duration">1 Hr 45 Mins</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-jar"></i> House of Honey & Mondo Nougat</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-bag-shopping"></i> <strong>Shopping:</strong> Sample local medicinal honey and watch nougat being made. Perfect for bringing back high-quality souvenirs.
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> Rest / To City</div>
-                </div>
-
-<div class="timeline-item" data-start="17:30" data-end="20:00">
-                    <div class="item-header">
-                        <div class="time-box">5:30 PM <span class="duration">2.5 Hours</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-bridge"></i> Victoria Park & Matagarup Bridge</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-utensils"></i> <strong>Evening:</strong> Grab dinner at Victoria Park (great Halal options). Then, enjoy a beautiful twilight walk across the illuminated Matagarup Bridge near Optus Stadium.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-<div id="day4" class="day-content">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiC5GDLbj8c3tV_ROlrJ_7Rz01sNaLDfH-1w&s" alt="Sand Dunes" class="hero-img">
-            <div class="day-subtitle">LANCELIN + YANCHEP + LAGOON ⭐⭐⭐⭐</div>
-
-<div class="attire-box">
-                <i class="fa-solid fa-shirt"></i> 
-                <div><strong>Today's Attire:</strong> Activewear, flip-flops for the beach, sunglasses & scarf for the sand dunes.</div>
-            </div>
-
-<a href="https://www.google.com/maps/dir/Aveley,+WA/Lancelin+Sand+Dunes,+WA/Yanchep+National+Park,+WA/Yanchep+Lagoon,+WA/Ellenbrook+Central,+WA" target="_blank" class="map-btn">
-                <i class="fa-solid fa-location-arrow"></i> Navigate Day 4
-            </a>
-
-<p style="text-align: center; font-size: 0.85rem; color: var(--text-dark); margin-bottom: 15px; font-weight: 500;">👉 Best balance of: Nature • Adventure • Cooling</p>
-
-<div class="timeline">
-                <div class="timeline-item" data-start="08:30" data-end="10:00">
-                    <div class="item-header">
-                        <div class="time-box">8:30 AM <span class="duration">1.5 Hrs Transit</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-car-side"></i> North Adventure</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-lightbulb"></i> Drive to the furthest point first (Lancelin) while the morning is cool, then work your way south back towards home.
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> To Lancelin</div>
-                </div>
-
-<div class="timeline-item" data-start="10:00" data-end="12:00">
-                    <div class="item-header">
-                        <div class="time-box">10:00 AM <span class="duration">2 Hours</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-mound"></i> Lancelin Sand Dunes</div>
-                    <div class="cost-badge">Est: RM 80-120 total</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-person-snowboarding"></i> <strong>Activity:</strong> Rent sandboards ($14 AUD/hr ≈ RM 40/hr) to slide down the massive white dunes!
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> Drive South to Yanchep</div>
-                </div>
-
-<div class="timeline-item" data-start="12:00" data-end="13:00">
-                    <div class="item-header">
-                        <div class="time-box">12:00 PM <span class="duration">1 Hour</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-utensils"></i> Packed Lunch</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-box-open"></i> Have your packed lunch on the drive down to the National Park.
-                    </div>
-                </div>
-
-<div class="timeline-item" data-start="13:00" data-end="15:00">
-                    <div class="item-header">
-                        <div class="time-box">1:00 PM <span class="duration">2 Hours</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-leaf"></i> Yanchep National Park</div>
-                    <div class="cost-badge">Est: RM 50 (Car Pass)</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-koala"></i> Walk the Koala Boardwalk. Keep your eyes peeled in the eucalyptus trees.
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> To Lagoon</div>
-                </div>
-
-<div class="timeline-item" data-start="15:15" data-end="17:15">
-                    <div class="item-header">
-                        <div class="time-box">3:15 PM <span class="duration">2 Hours</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-water"></i> Yanchep Lagoon</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-umbrella-beach"></i> Time to wash off the sand! The reef creates a calm, cooling lagoon perfect for an afternoon swim.
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> 1.5 Hrs home</div>
-                </div>
-
-<div class="timeline-item" data-start="19:00" data-end="21:00">
-                    <div class="item-header">
-                        <div class="time-box">7:00 PM <span class="duration">2 Hours</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-bag-shopping"></i> Kmart & Late Shopping</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-store"></i> <strong>Shopping Session:</strong> Ellenbrook Central is open late tonight (Thursdays usually till 9 PM). Perfect time to hit Kmart or Target for affordable clothes, toys, and homeware!
-                    </div>
-                </div>
-            </div>
-        </div>
-
-<div id="day5" class="day-content">
-            <img src="https://res.cloudinary.com/simpleview/image/upload/v1700158503/clients/perthrto/111837_56_6b2bde4a-432f-4519-bc28-8ec886658328.jpg" alt="Perth Skyline" class="hero-img">
-            <div class="day-subtitle">CITY + FREMANTLE MARKETS + E SHED + COTTESLOE ⭐⭐⭐⭐⭐</div>
-
-<div class="attire-box">
-                <i class="fa-solid fa-shirt"></i> 
-                <div><strong>Today's Attire:</strong> Nice casual for family photos, comfortable walking shoes. Bring a jacket for the beach sunset.</div>
-            </div>
-
-<a href="https://www.google.com/maps/dir/Aveley,+WA/Kings+Park+and+Botanic+Garden,+WA/Elizabeth+Quay,+WA/Blue+Boat+House,+Crawley,+WA/Fremantle+Markets,+WA/Rainbow+Sea+Containers,+Fremantle,+WA/Cottesloe+Beach,+WA" target="_blank" class="map-btn">
-                <i class="fa-solid fa-location-arrow"></i> Navigate Day 5
-            </a>
-
-<div class="timeline">
-                <div class="timeline-item" data-start="08:30" data-end="09:00">
-                    <div class="item-header">
-                        <div class="time-box">8:30 AM <span class="duration">30 Mins</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-car-side"></i> Depart Aveley</div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> To City</div>
-                </div>
-
-<div class="timeline-item" data-start="09:00" data-end="11:30">
-                    <div class="item-header">
-                        <div class="time-box">9:00 AM <span class="duration">2.5 Hours</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-tree"></i> Kings Park</div>
-                    <div class="highlight-tags">
-                        <span>🌳 Playground</span>
-                        <span>🌉 Glass bridge</span>
-                        <span>🏙️ Skyline</span>
-                    </div>
-                    <div class="cost-badge cost-free">Free Entry</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-camera"></i> <strong>Must Do:</strong> Walk the glass bridge and take a massive family group photo with the Perth City Skyline. Let the kids run at the playground!
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> Short drive</div>
-                </div>
-
-<div class="timeline-item" data-start="11:45" data-end="13:30">
-                    <div class="item-header">
-                        <div class="time-box">11:45 AM <span class="duration">1 Hr 45 Mins</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-city"></i> Elizabeth Quay & Lunch</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-utensils"></i> <strong>Lunch Session:</strong> Head down to the Quay to walk around and grab lunch. There are many Halal/Seafood options nearby in the CBD.
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> To Blue Boat House</div>
-                </div>
-
-<div class="timeline-item" data-start="13:45" data-end="14:15">
-                    <div class="item-header">
-                        <div class="time-box">1:45 PM <span class="duration">30 Mins</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-camera"></i> Blue Boat House</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-triangle-exclamation"></i> <strong>Tip:</strong> Quick iconic photo stop *on your way* down the coast! Expect a short queue. Be very careful crossing the busy road to access the pier.
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> 30 Mins to Fremantle</div>
-                </div>
-
-<div class="timeline-item" data-start="14:45" data-end="16:00">
-                    <div class="item-header">
-                        <div class="time-box">2:45 PM <span class="duration">1 Hr 15 Mins</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-store"></i> Fremantle Markets</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-bag-shopping"></i> <strong>Great Swap!</strong> Because today is Friday, the famous markets are officially OPEN! Time to hunt for local souvenirs and the famous Honey Cake.
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> 5 Mins to E Shed</div>
-                </div>
-
-<div class="timeline-item" data-start="16:00" data-end="17:00">
-                    <div class="item-header">
-                        <div class="time-box">4:00 PM <span class="duration">1 Hour</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-gift"></i> E Shed Markets</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-store"></i> <strong>Souvenirs:</strong> Located at Victoria Quay. Excellent spot for affordable Aussie souvenirs, magnets, and local crafts. Note: Closes strictly at 5:00 PM!
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> 15 Mins to Beach</div>
-                </div>
-
-<div class="timeline-item" data-start="17:15" data-end="20:00">
-                    <div class="item-header">
-                        <div class="time-box">5:15 PM <span class="duration">2.5 Hours</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-sun"></i> Cottesloe Beach Sunset & Dinner</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-fish"></i> <strong>Dinner:</strong> The perfect sunset spot. Grab some "Fish & Chips" right on the grass. Watch the sun go down over the Indian Ocean and take photos at the iconic Indiana Teahouse!
-                    </div>
-                </div>
-            </div>
-        </div>
-
-<div id="day6" class="day-content">
-            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/9f/23/d6/fremantle-markets.jpg?w=900&h=500&s=1" alt="Fruit Orchards" class="hero-img">
-            <div class="day-subtitle">FRUIT PICKING + SHOPPING + AIRPORT ⭐⭐⭐⭐</div>
-
-<div class="attire-box">
-                <i class="fa-solid fa-shirt"></i> 
-                <div><strong>Today's Attire:</strong> Comfortable shoes for the orchards and shopping. Dress in layers since you will be heading straight to the airport tonight.</div>
-            </div>
-
-<a href="https://www.google.com/maps/dir/Aveley,+WA/The+Fruit+Corner,+Pickering+Brook,+WA/Westfield+Carousel,+Cannington,+WA/South+Perth+Foreshore,+WA/Perth+Airport,+WA" target="_blank" class="map-btn">
-                <i class="fa-solid fa-location-arrow"></i> Navigate Day 6
-            </a>
-
-<p style="text-align: center; font-size: 0.85rem; color: var(--deep-teal); margin-bottom: 15px; font-weight: 600;">👉 BEST ending day</p>
-
-<div class="timeline">
-                <div class="timeline-item" data-start="09:00" data-end="11:30">
-                    <div class="item-header">
-                        <div class="time-box">9:00 AM <span class="duration">2.5 Hours</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-apple-whole"></i> The Fruit Corner</div>
-                    <div class="highlight-tags">
-                        <span>🍎 Fruit Picking</span>
-                        <span>🍁 Autumn Colors</span>
-                    </div>
-                    <div class="cost-badge">Entry: ~RM 14 | Fruits: ~RM 15-25/kg</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-camera"></i> <strong>Highlight:</strong> Pick fresh apples or pears straight from the trees. The kids will love it, and the orange/red autumn leaves make for amazing photos!
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> 30 Mins to Shopping</div>
-                </div>
-
-<div class="timeline-item" data-start="12:00" data-end="17:00">
-                    <div class="item-header">
-                        <div class="time-box">12:00 PM <span class="duration">5 Hours</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-store"></i> Westfield Carousel or Belmont</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-triangle-exclamation"></i> <strong>CRITICAL TIME CHECK:</strong> Because today is Saturday, ALL retail stores in Perth (Kmart, Target, supermarkets) legally close at 5:00 PM! Get your final massive shopping haul and lunch done here before they lock the doors.
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> Short Drive</div>
-                </div>
-
-<div class="timeline-item" data-start="17:30" data-end="20:00">
-                    <div class="item-header">
-                        <div class="time-box">5:30 PM <span class="duration">2.5 Hours</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-moon"></i> South Perth Foreshore & Dinner</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-utensils"></i> <strong>Relax:</strong> Enjoy a quiet dinner in South Perth. Head to the foreshore to watch the sunset over the incredible Perth City skyline across the river. Perfect spot to do a final luggage repack in the car.
-                    </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> 15 Mins to Airport</div>
-                </div>
-
-<div class="timeline-item" data-start="22:00" data-end="23:59">
-                    <div class="item-header">
-                        <div class="time-box">10:00 PM <span class="duration">Check-in</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-plane-departure"></i> Perth Airport Drop-off</div>
-                    <div class="tip-box">
-                        <i class="fa-solid fa-plane"></i> Arrive at the airport, return the rental car, and check in for your 4:00 AM flight back home. Safe travels!
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    <div id="day6" class="day-content"><div class="day-subtitle">DAY 6 DEPARTURE</div></div>
 </div>
 
 <script>
-        // Tab Navigation
-        function openDay(dayId) {
-            document.querySelectorAll('.day-content').forEach(el => {
-                el.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-btn').forEach(el => {
-                el.classList.remove('active');
-            });
-            
-            document.getElementById(dayId).classList.add('active');
-            event.currentTarget.classList.add('active');
-            
-            const now = new Date();
-            checkCurrentTime(now);
-            updateCountdown(now);
-        }
+    function openDay(dayId) {
+        document.querySelectorAll('.day-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+        document.getElementById(dayId).classList.add('active');
+        event.currentTarget.classList.add('active');
+        runTimeEngine();
+    }
 
-        // Checkbox Completion Toggle
-        function toggleComplete(checkbox) {
-            const timelineItem = checkbox.closest('.timeline-item');
-            if(checkbox.checked) {
-                timelineItem.classList.add('completed');
-                timelineItem.classList.remove('current-active'); 
-            } else {
-                timelineItem.classList.remove('completed');
+    function toggleComplete(checkbox) {
+        const item = checkbox.closest('.timeline-item');
+        checkbox.checked ? item.classList.add('completed') : item.classList.remove('completed');
+        runTimeEngine();
+    }
+
+    function checkCurrentTime(now) {
+        const timeStr = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+        document.querySelectorAll('.day-content.active .timeline-item').forEach(item => {
+            item.classList.remove('current-active');
+            const start = item.getAttribute('data-start');
+            const end = item.getAttribute('data-end');
+            if(start && end && timeStr >= start && timeStr < end && !item.classList.contains('completed')) {
+                item.classList.add('current-active');
             }
-            const now = new Date();
-            checkCurrentTime(now);
-            updateCountdown(now);
-        }
+        });
+    }
 
-        // Real-time Current Activity Highlight
-        function checkCurrentTime(now) {
-            const currentHour = now.getHours();
-            const currentMinute = now.getMinutes();
-            const currentTimeStr = `${currentHour.toString().padStart(2, '0')}:${currentMinute.toString().padStart(2, '0')}`;
+    function runTimeEngine() {
+        const now = new Date();
+        const opt = { hour: '2-digit', minute: '2-digit', hour12: true };
+        document.getElementById('myt-time').innerText = now.toLocaleTimeString('en-US', opt);
+        document.getElementById('awst-time').innerText = now.toLocaleTimeString('en-US', opt);
+        checkCurrentTime(now);
+        updateCountdown(now);
+    }
 
-            const activeTabItems = document.querySelectorAll('.day-content.active .timeline-item');
-            
-            activeTabItems.forEach(item => {
-                item.classList.remove('current-active');
-                if(item.classList.contains('completed')) return;
-
-                const start = item.getAttribute('data-start');
-                const end = item.getAttribute('data-end');
-
-                if(start && end) {
-                    if (currentTimeStr >= start && currentTimeStr < end) {
-                        item.classList.add('current-active');
-                    }
-                }
-            });
-        }
-
-        // Clock & Countdown Engine
-        function runTimeEngine() {
-            const now = new Date();
-            
-            // Note: Malaysia and Perth are both UTC+8
-            const options = { timeZone: 'Asia/Kuala_Lumpur', hour: '2-digit', minute: '2-digit', hour12: true };
-            const mytStr = now.toLocaleTimeString('en-US', options);
-            
-            const awstOptions = { timeZone: 'Australia/Perth', hour: '2-digit', minute: '2-digit', hour12: true };
-            const awstStr = now.toLocaleTimeString('en-US', awstOptions);
-
-            document.getElementById('myt-time').innerText = mytStr;
-            document.getElementById('awst-time').innerText = awstStr;
-
-            checkCurrentTime(now);
-            updateCountdown(now);
-        }
-
-        function updateCountdown(now) {
-            const currentHour = now.getHours();
-            const currentMinute = now.getMinutes();
-            const currentTimeMin = currentHour * 60 + currentMinute;
-
-            const activeTabItems = document.querySelectorAll('.day-content.active .timeline-item');
-            let nextActivity = null;
-            let minDiff = Infinity;
-
-            activeTabItems.forEach(item => {
-                if(item.classList.contains('completed')) return;
-                
-                const startStr = item.getAttribute('data-start');
-                if(!startStr) return;
-                
-                const [h, m] = startStr.split(':').map(Number);
-                const startMin = h * 60 + m;
-                
-                if (startMin > currentTimeMin) {
-                    const diff = startMin - currentTimeMin;
-                    if (diff < minDiff) {
-                        minDiff = diff;
-                        nextActivity = item.querySelector('.activity-title').innerText;
-                    }
-                }
-            });
-
-            const countdownEl = document.getElementById('activity-countdown');
-            if (nextActivity) {
-                const hours = Math.floor(minDiff / 60);
-                const mins = minDiff % 60;
-                let timeStr = '';
-                if (hours > 0) timeStr += `${hours}h `;
-                timeStr += `${mins}m`;
-                
-                countdownEl.innerHTML = `<strong>Next up:</strong> ${nextActivity} in <span class="highlight-time">${timeStr}</span>`;
-            } else {
-                countdownEl.innerHTML = `<em>No upcoming activities scheduled for the rest of this day.</em>`;
+    function updateCountdown(now) {
+        const currentMin = now.getHours() * 60 + now.getMinutes();
+        let next = null;
+        let minDiff = Infinity;
+        document.querySelectorAll('.day-content.active .timeline-item').forEach(item => {
+            if(item.classList.contains('completed')) return;
+            const startStr = item.getAttribute('data-start');
+            if(!startStr) return;
+            const [h, m] = startStr.split(':').map(Number);
+            const startMin = h * 60 + m;
+            if (startMin > currentMin && (startMin - currentMin) < minDiff) {
+                minDiff = startMin - currentMin;
+                next = item.querySelector('.activity-title').innerText;
             }
+        });
+        const el = document.getElementById('activity-countdown');
+        if (next) {
+            el.innerHTML = `Next: ${next} in <span class="highlight-time">${Math.floor(minDiff/60)}h ${minDiff%60}m</span>`;
+        } else {
+            el.innerHTML = `No more activities scheduled today.`;
         }
+    }
 
-        window.onload = () => {
-            runTimeEngine();
-            setInterval(runTimeEngine, 60000); 
-        };
-    </script>
+    window.onload = () => { runTimeEngine(); setInterval(runTimeEngine, 60000); };
+</script>
 </body>
 </html>
