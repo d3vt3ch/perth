@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perth Travel Itinerary</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
+    <style>
         /* CSS Variables */
         :root {
             --deep-teal: #006D77;
@@ -22,14 +22,14 @@
             --success: #00b894;
         }
 
-* {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
 
-body {
+        body {
             background-color: var(--sand);
             background-image: url('https://images.unsplash.com/photo-1580501170888-8066471f0ea8?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
@@ -42,7 +42,7 @@ body {
             padding: 20px 10px;
         }
 
-.app-container {
+        .app-container {
             width: 100%;
             max-width: 480px;
             background: var(--white-glass);
@@ -57,7 +57,7 @@ body {
             position: relative;
         }
 
-.header {
+        .header {
             padding: 20px 20px 15px 20px;
             background: var(--deep-teal);
             color: white;
@@ -66,20 +66,20 @@ body {
             border-bottom-right-radius: 20px;
         }
 
-.header h1 {
+        .header h1 {
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 5px;
         }
 
-.header h2 {
+        .header h2 {
             font-size: 0.85rem;
             font-weight: 400;
             opacity: 0.9;
             margin-bottom: 10px;
         }
 
-.cost-summary {
+        .cost-summary {
             background: rgba(255, 255, 255, 0.2);
             display: inline-block;
             padding: 5px 15px;
@@ -89,7 +89,7 @@ body {
             margin-top: 5px;
         }
 
-/* Attire Suggestion Box */
+        /* Attire Suggestion Box */
         .attire-box {
             background: rgba(237, 246, 249, 0.9);
             border: 1px dashed var(--deep-teal);
@@ -107,7 +107,7 @@ body {
             color: var(--deep-teal);
         }
 
-/* Time & Countdown Widget */
+        /* Time & Countdown Widget */
         .time-widget {
             background: rgba(255, 255, 255, 0.9);
             border: 1px solid var(--soft-mint);
@@ -129,7 +129,7 @@ body {
         }
         .clocks i { margin-right: 3px; }
 
-.countdown {
+        .countdown {
             font-size: 0.9rem;
             color: var(--text-dark);
         }
@@ -141,7 +141,7 @@ body {
             border-radius: 6px;
         }
 
-.day-selector {
+        .day-selector {
             display: flex;
             overflow-x: auto;
             padding: 10px 10px 15px 10px;
@@ -150,7 +150,7 @@ body {
         }
         .day-selector::-webkit-scrollbar { display: none; }
 
-.tab-btn {
+        .tab-btn {
             background: rgba(255, 255, 255, 0.5);
             border: 1px solid var(--soft-mint);
             padding: 8px 16px;
@@ -162,14 +162,14 @@ body {
             transition: all 0.3s ease;
         }
 
-.tab-btn.active {
+        .tab-btn.active {
             background: var(--deep-teal);
             color: white;
             border-color: var(--deep-teal);
             box-shadow: 0 4px 10px rgba(0, 109, 119, 0.3);
         }
 
-.day-content {
+        .day-content {
             display: none;
             padding: 0 20px 20px 20px;
             flex-grow: 1;
@@ -180,12 +180,12 @@ body {
             animation: fadeIn 0.4s ease;
         }
 
-@keyframes fadeIn {
+        @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-.hero-img {
+        .hero-img {
             width: 100%;
             height: 150px;
             object-fit: cover;
@@ -194,7 +194,7 @@ body {
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-.day-subtitle {
+        .day-subtitle {
             text-align: center;
             font-size: 0.9rem;
             color: var(--deep-teal);
@@ -202,7 +202,7 @@ body {
             margin-bottom: 15px;
         }
 
-.map-btn {
+        .map-btn {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -223,7 +223,7 @@ body {
             color: white;
         }
 
-.timeline {
+        .timeline {
             position: relative;
             padding-left: 30px;
         }
@@ -237,7 +237,7 @@ body {
             background: var(--soft-mint);
         }
 
-.timeline-item {
+        .timeline-item {
             position: relative;
             margin-bottom: 25px;
             padding: 15px;
@@ -247,7 +247,7 @@ body {
             transition: all 0.3s ease;
         }
 
-.timeline-item.current-active {
+        .timeline-item.current-active {
             border: 2px solid var(--deep-teal);
             background: rgba(255, 255, 255, 0.9);
             box-shadow: 0 4px 15px rgba(0, 109, 119, 0.2);
@@ -267,13 +267,13 @@ body {
             animation: pulse 2s infinite;
         }
 
-@keyframes pulse {
+        @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(225, 112, 85, 0.7); }
             70% { box-shadow: 0 0 0 6px rgba(225, 112, 85, 0); }
             100% { box-shadow: 0 0 0 0 rgba(225, 112, 85, 0); }
         }
 
-.timeline-item::before {
+        .timeline-item::before {
             content: '';
             position: absolute;
             left: -26px;
@@ -286,7 +286,7 @@ body {
             box-shadow: 0 0 0 2px var(--soft-mint);
         }
 
-.transit-info {
+        .transit-info {
             position: absolute;
             left: -33px;
             bottom: -25px;
@@ -302,14 +302,14 @@ body {
             z-index: 2;
         }
 
-.item-header {
+        .item-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 8px;
         }
 
-.time-box {
+        .time-box {
             font-weight: 600;
             color: var(--deep-teal);
             font-size: 0.9rem;
@@ -322,7 +322,7 @@ body {
             font-weight: 400;
         }
 
-.activity-title {
+        .activity-title {
             font-size: 1.05rem;
             font-weight: 600;
             margin-bottom: 5px;
@@ -331,7 +331,7 @@ body {
             gap: 8px;
         }
 
-.tip-box {
+        .tip-box {
             background: rgba(131, 197, 190, 0.15);
             border-left: 3px solid var(--deep-teal);
             padding: 8px 10px;
@@ -346,7 +346,7 @@ body {
             margin-right: 5px;
         }
 
-.highlight-tags {
+        .highlight-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 5px;
@@ -361,7 +361,7 @@ body {
             font-weight: 600;
         }
 
-.checkbox-container {
+        .checkbox-container {
             display: flex;
             align-items: center;
             cursor: pointer;
@@ -386,7 +386,7 @@ body {
             color: white;
         }
 
-.timeline-item.completed .activity-title {
+        .timeline-item.completed .activity-title {
             text-decoration: line-through;
             color: var(--text-light);
         }
@@ -394,7 +394,7 @@ body {
             opacity: 0.7;
         }
 
-.cost-badge {
+        .cost-badge {
             display: inline-block;
             background: #fff3cd;
             color: #856404;
@@ -414,7 +414,7 @@ body {
 </head>
 <body>
 
-<div class="app-container">
+    <div class="app-container">
         <header class="header">
             <h1>Perth Family Adventure</h1>
             <h2>April 6th - 12th | Autumn 14°C-25°C</h2>
@@ -424,7 +424,7 @@ body {
             </div>
         </header>
 
-<div class="time-widget">
+        <div class="time-widget">
             <div class="clocks">
                 <div><i class="fa-regular fa-clock"></i> MYT: <span id="myt-time">--:--</span></div>
                 <div><i class="fa-regular fa-clock"></i> AWST: <span id="awst-time">--:--</span></div>
@@ -434,7 +434,7 @@ body {
             </div>
         </div>
 
-<div class="day-selector">
+        <div class="day-selector">
             <button class="tab-btn active" onclick="openDay('day1')">Day 1</button>
             <button class="tab-btn" onclick="openDay('day2')">Day 2</button>
             <button class="tab-btn" onclick="openDay('day3')">Day 3</button>
@@ -443,20 +443,20 @@ body {
             <button class="tab-btn" onclick="openDay('day6')">Day 6</button>
         </div>
 
-<div id="day1" class="day-content active">
+        <div id="day1" class="day-content active">
             <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="Arrival" class="hero-img">
             <div class="day-subtitle">ARRIVAL + DFO + GROCERY (AIRPORT)</div>
 
-<div class="attire-box">
+            <div class="attire-box">
                 <i class="fa-solid fa-shirt"></i> 
                 <div><strong>Today's Attire:</strong> Comfortable travel wear and a light jacket for the evening.</div>
             </div>
 
-<a href="https://www.google.com/maps/dir/Perth+Airport,+WA/DFO+Perth,+WA/Coles+Belmont,+WA/Aveley,+WA" target="_blank" class="map-btn">
+            <a href="https://www.google.com/maps/dir/Perth+Airport+(PER)/DFO+Perth/Coles+Belmont+Forum/Aveley+WA/" target="_blank" class="map-btn">
                 <i class="fa-solid fa-location-arrow"></i> Navigate Day 1
             </a>
 
-<div class="timeline">
+            <div class="timeline">
                 <div class="timeline-item" data-start="14:50" data-end="16:00">
                     <div class="item-header">
                         <div class="time-box">2:50 PM <span class="duration">1 Hr 10 Mins</span></div>
@@ -472,7 +472,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> ~10 mins to DFO</div>
                 </div>
 
-<div class="timeline-item" data-start="16:00" data-end="18:00">
+                <div class="timeline-item" data-start="16:00" data-end="18:00">
                     <div class="item-header">
                         <div class="time-box">4:00 PM <span class="duration">2 Hours</span></div>
                         <label class="checkbox-container">
@@ -487,7 +487,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> 10 mins to Belmont Forum</div>
                 </div>
 
-<div class="timeline-item" data-start="18:00" data-end="19:30">
+                <div class="timeline-item" data-start="18:00" data-end="19:30">
                     <div class="item-header">
                         <div class="time-box">6:00 PM <span class="duration">1.5 Hours</span></div>
                         <label class="checkbox-container">
@@ -503,7 +503,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> ~35 mins to Aveley</div>
                 </div>
 
-<div class="timeline-item" data-start="19:30" data-end="20:30">
+                <div class="timeline-item" data-start="19:30" data-end="20:30">
                     <div class="item-header">
                         <div class="time-box">7:30 PM <span class="duration">1 Hour</span></div>
                         <label class="checkbox-container">
@@ -517,7 +517,7 @@ body {
                     </div>
                 </div>
 
-<div class="timeline-item" data-start="20:30" data-end="23:59">
+                <div class="timeline-item" data-start="20:30" data-end="23:59">
                     <div class="item-header">
                         <div class="time-box">8:30 PM <span class="duration">Relax</span></div>
                         <label class="checkbox-container">
@@ -530,20 +530,20 @@ body {
             </div>
         </div>
 
-<div id="day2" class="day-content">
+        <div id="day2" class="day-content">
             <img src="https://www.aussieperthtours.com.au/wp-content/uploads/2020/03/124029-56-scaled.jpg" alt="Wildlife" class="hero-img">
             <div class="day-subtitle">WILDLIFE + SWAN VALLEY ⭐⭐⭐⭐⭐</div>
 
-<div class="attire-box">
+            <div class="attire-box">
                 <i class="fa-solid fa-shirt"></i> 
                 <div><strong>Today's Attire:</strong> Casual, closed-toe walking shoes, hat, and sunglasses for the park.</div>
             </div>
 
-<a href="https://www.google.com/maps/dir/Aveley,+WA/Caversham+Wildlife+Park,+WA/The+Margaret+River+Chocolate+Company,+West+Swan,+WA/Chemist+Warehouse+Ellenbrook,+WA/Aveley,+WA" target="_blank" class="map-btn">
+            <a href="https://www.google.com/maps/dir/Aveley+WA/Caversham+Wildlife+Park/Margaret+River+Chocolate+Company,+Swan+Valley/Chemist+Warehouse+Ellenbrook/Aveley+WA/" target="_blank" class="map-btn">
                 <i class="fa-solid fa-location-arrow"></i> Navigate Day 2
             </a>
 
-<div class="timeline">
+            <div class="timeline">
                 <div class="timeline-item" data-start="09:00" data-end="12:30">
                     <div class="item-header">
                         <div class="time-box">9:00 AM <span class="duration">3.5 Hours</span></div>
@@ -560,7 +560,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> 15 min drive to Lunch</div>
                 </div>
 
-<div class="timeline-item" data-start="13:00" data-end="14:00">
+                <div class="timeline-item" data-start="13:00" data-end="14:00">
                     <div class="item-header">
                         <div class="time-box">1:00 PM <span class="duration">1 Hour</span></div>
                         <label class="checkbox-container">
@@ -575,7 +575,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> 5 min drive</div>
                 </div>
 
-<div class="timeline-item" data-start="14:15" data-end="15:30">
+                <div class="timeline-item" data-start="14:15" data-end="15:30">
                     <div class="item-header">
                         <div class="time-box">2:15 PM <span class="duration">1 Hr 15 Mins</span></div>
                         <label class="checkbox-container">
@@ -591,7 +591,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> 15 min drive</div>
                 </div>
 
-<div class="timeline-item" data-start="16:00" data-end="18:00">
+                <div class="timeline-item" data-start="16:00" data-end="18:00">
                     <div class="item-header">
                         <div class="time-box">4:00 PM <span class="duration">2 Hours</span></div>
                         <label class="checkbox-container">
@@ -606,7 +606,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> 5 min drive</div>
                 </div>
 
-<div class="timeline-item" data-start="18:30" data-end="22:00">
+                <div class="timeline-item" data-start="18:30" data-end="22:00">
                     <div class="item-header">
                         <div class="time-box">6:30 PM <span class="duration">Evening</span></div>
                         <label class="checkbox-container">
@@ -619,22 +619,22 @@ body {
             </div>
         </div>
 
-<div id="day3" class="day-content">
+        <div id="day3" class="day-content">
             <img src="https://perthisok.com/thumbnails/cG9zdDoxNzEyNjY=.jpeg" alt="Train & City Night" class="hero-img">
             <div class="day-subtitle">TRAIN + SWAN VALLEY + CITY NIGHT ⭐⭐⭐⭐⭐</div>
 
-<div class="attire-box">
+            <div class="attire-box">
                 <i class="fa-solid fa-shirt"></i> 
                 <div><strong>Today's Attire:</strong> Casual layers and comfortable walking shoes for the park and evening walk.</div>
             </div>
 
-<a href="https://www.google.com/maps/dir/Aveley,+WA/Whiteman+Park,+WA/The+House+of+Honey,+Herne+Hill,+WA/Victoria+Park,+WA/Matagarup+Bridge,+WA" target="_blank" class="map-btn">
+            <a href="https://www.google.com/maps/dir/Aveley+WA/Whiteman+Park/The+House+of+Honey/Mondo+Nougat/Victoria+Park+WA/Matagarup+Bridge/Aveley+WA/" target="_blank" class="map-btn">
                 <i class="fa-solid fa-location-arrow"></i> Navigate Day 3
             </a>
 
-<p style="text-align: center; font-size: 0.85rem; color: var(--deep-teal); margin-bottom: 15px; font-weight: 600;">👉 Kids highlight day</p>
+            <p style="text-align: center; font-size: 0.85rem; color: var(--deep-teal); margin-bottom: 15px; font-weight: 600;">👉 Kids highlight day</p>
 
-<div class="timeline">
+            <div class="timeline">
                 <div class="timeline-item" data-start="09:30" data-end="13:00">
                     <div class="item-header">
                         <div class="time-box">9:30 AM <span class="duration">3.5 Hours</span></div>
@@ -654,7 +654,7 @@ body {
                     </div>
                 </div>
 
-<div class="timeline-item" data-start="13:00" data-end="14:00">
+                <div class="timeline-item" data-start="13:00" data-end="14:00">
                     <div class="item-header">
                         <div class="time-box">1:00 PM <span class="duration">1 Hour</span></div>
                         <label class="checkbox-container">
@@ -666,7 +666,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> Short drive</div>
                 </div>
 
-<div class="timeline-item" data-start="14:15" data-end="16:00">
+                <div class="timeline-item" data-start="14:15" data-end="16:00">
                     <div class="item-header">
                         <div class="time-box">2:15 PM <span class="duration">1 Hr 45 Mins</span></div>
                         <label class="checkbox-container">
@@ -681,7 +681,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> Rest / To City</div>
                 </div>
 
-<div class="timeline-item" data-start="17:30" data-end="20:00">
+                <div class="timeline-item" data-start="17:30" data-end="20:00">
                     <div class="item-header">
                         <div class="time-box">5:30 PM <span class="duration">2.5 Hours</span></div>
                         <label class="checkbox-container">
@@ -697,22 +697,22 @@ body {
             </div>
         </div>
 
-<div id="day4" class="day-content">
+        <div id="day4" class="day-content">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiC5GDLbj8c3tV_ROlrJ_7Rz01sNaLDfH-1w&s" alt="Sand Dunes" class="hero-img">
             <div class="day-subtitle">LANCELIN + YANCHEP + LAGOON ⭐⭐⭐⭐</div>
 
-<div class="attire-box">
+            <div class="attire-box">
                 <i class="fa-solid fa-shirt"></i> 
                 <div><strong>Today's Attire:</strong> Activewear, flip-flops for the beach, sunglasses & scarf for the sand dunes.</div>
             </div>
 
-<a href="https://www.google.com/maps/dir/Aveley,+WA/Lancelin+Sand+Dunes,+WA/Yanchep+National+Park,+WA/Yanchep+Lagoon,+WA/Ellenbrook+Central,+WA" target="_blank" class="map-btn">
+            <a href="https://www.google.com/maps/dir/Aveley+WA/Lancelin+Sand+Dunes/Yanchep+National+Park/Yanchep+Lagoon/Ellenbrook+Central/Aveley+WA/" target="_blank" class="map-btn">
                 <i class="fa-solid fa-location-arrow"></i> Navigate Day 4
             </a>
 
-<p style="text-align: center; font-size: 0.85rem; color: var(--text-dark); margin-bottom: 15px; font-weight: 500;">👉 Best balance of: Nature • Adventure • Cooling</p>
+            <p style="text-align: center; font-size: 0.85rem; color: var(--text-dark); margin-bottom: 15px; font-weight: 500;">👉 Best balance of: Nature • Adventure • Cooling</p>
 
-<div class="timeline">
+            <div class="timeline">
                 <div class="timeline-item" data-start="08:30" data-end="10:00">
                     <div class="item-header">
                         <div class="time-box">8:30 AM <span class="duration">1.5 Hrs Transit</span></div>
@@ -728,7 +728,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> To Lancelin</div>
                 </div>
 
-<div class="timeline-item" data-start="10:00" data-end="12:00">
+                <div class="timeline-item" data-start="10:00" data-end="12:00">
                     <div class="item-header">
                         <div class="time-box">10:00 AM <span class="duration">2 Hours</span></div>
                         <label class="checkbox-container">
@@ -744,7 +744,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> Drive South to Yanchep</div>
                 </div>
 
-<div class="timeline-item" data-start="12:00" data-end="13:00">
+                <div class="timeline-item" data-start="12:00" data-end="13:00">
                     <div class="item-header">
                         <div class="time-box">12:00 PM <span class="duration">1 Hour</span></div>
                         <label class="checkbox-container">
@@ -758,7 +758,7 @@ body {
                     </div>
                 </div>
 
-<div class="timeline-item" data-start="13:00" data-end="15:00">
+                <div class="timeline-item" data-start="13:00" data-end="15:00">
                     <div class="item-header">
                         <div class="time-box">1:00 PM <span class="duration">2 Hours</span></div>
                         <label class="checkbox-container">
@@ -774,7 +774,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> To Lagoon</div>
                 </div>
 
-<div class="timeline-item" data-start="15:15" data-end="17:15">
+                <div class="timeline-item" data-start="15:15" data-end="17:15">
                     <div class="item-header">
                         <div class="time-box">3:15 PM <span class="duration">2 Hours</span></div>
                         <label class="checkbox-container">
@@ -789,7 +789,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> 1.5 Hrs home</div>
                 </div>
 
-<div class="timeline-item" data-start="19:00" data-end="21:00">
+                <div class="timeline-item" data-start="19:00" data-end="21:00">
                     <div class="item-header">
                         <div class="time-box">7:00 PM <span class="duration">2 Hours</span></div>
                         <label class="checkbox-container">
@@ -805,20 +805,20 @@ body {
             </div>
         </div>
 
-<div id="day5" class="day-content">
+        <div id="day5" class="day-content">
             <img src="https://res.cloudinary.com/simpleview/image/upload/v1700158503/clients/perthrto/111837_56_6b2bde4a-432f-4519-bc28-8ec886658328.jpg" alt="Perth Skyline" class="hero-img">
-            <div class="day-subtitle">CITY + FREMANTLE MARKETS + COTTESLOE ⭐⭐⭐⭐⭐</div>
+            <div class="day-subtitle">CITY + FREMANTLE MARKETS + E SHED + COTTESLOE ⭐⭐⭐⭐⭐</div>
 
-<div class="attire-box">
+            <div class="attire-box">
                 <i class="fa-solid fa-shirt"></i> 
                 <div><strong>Today's Attire:</strong> Nice casual for family photos, comfortable walking shoes. Bring a jacket for the beach sunset.</div>
             </div>
 
-<a href="https://www.google.com/maps/dir/Aveley,+WA/Kings+Park+and+Botanic+Garden,+WA/Elizabeth+Quay,+WA/Blue+Boat+House,+Crawley,+WA/Fremantle+Markets,+WA/Rainbow+Sea+Containers,+Fremantle,+WA/Cottesloe+Beach,+WA" target="_blank" class="map-btn">
+            <a href="https://www.google.com/maps/dir/Aveley+WA/Kings+Park+and+Botanic+Garden/Elizabeth+Quay/Crawley+Edge+Boatshed/E+Shed+Markets/Fremantle+Markets/Cottesloe+Beach/Aveley+WA/" target="_blank" class="map-btn">
                 <i class="fa-solid fa-location-arrow"></i> Navigate Day 5
             </a>
 
-<div class="timeline">
+            <div class="timeline">
                 <div class="timeline-item" data-start="08:30" data-end="09:00">
                     <div class="item-header">
                         <div class="time-box">8:30 AM <span class="duration">30 Mins</span></div>
@@ -831,7 +831,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> To City</div>
                 </div>
 
-<div class="timeline-item" data-start="09:00" data-end="11:30">
+                <div class="timeline-item" data-start="09:00" data-end="11:30">
                     <div class="item-header">
                         <div class="time-box">9:00 AM <span class="duration">2.5 Hours</span></div>
                         <label class="checkbox-container">
@@ -852,7 +852,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> Short drive</div>
                 </div>
 
-<div class="timeline-item" data-start="11:45" data-end="13:30">
+                <div class="timeline-item" data-start="11:45" data-end="13:30">
                     <div class="item-header">
                         <div class="time-box">11:45 AM <span class="duration">1 Hr 45 Mins</span></div>
                         <label class="checkbox-container">
@@ -867,7 +867,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> To Blue Boat House</div>
                 </div>
 
-<div class="timeline-item" data-start="13:45" data-end="14:15">
+                <div class="timeline-item" data-start="13:45" data-end="14:15">
                     <div class="item-header">
                         <div class="time-box">1:45 PM <span class="duration">30 Mins</span></div>
                         <label class="checkbox-container">
@@ -879,12 +879,27 @@ body {
                     <div class="tip-box">
                         <i class="fa-solid fa-triangle-exclamation"></i> <strong>Tip:</strong> Quick iconic photo stop *on your way* down the coast! Expect a short queue. Be very careful crossing the busy road to access the pier.
                     </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> 30 Mins to Fremantle</div>
+                    <div class="transit-info"><i class="fa-solid fa-car"></i> 30 Mins to E Shed</div>
                 </div>
 
-<div class="timeline-item" data-start="14:45" data-end="16:45">
+                <div class="timeline-item" data-start="14:45" data-end="15:45">
                     <div class="item-header">
-                        <div class="time-box">2:45 PM <span class="duration">2 Hours</span></div>
+                        <div class="time-box">2:45 PM <span class="duration">1 Hour</span></div>
+                        <label class="checkbox-container">
+                            <input type="checkbox" onchange="toggleComplete(this)">
+                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
+                        </label>
+                    </div>
+                    <div class="activity-title"><i class="fa-solid fa-gift"></i> E Shed Markets</div>
+                    <div class="tip-box">
+                        <i class="fa-solid fa-store"></i> <strong>Souvenirs:</strong> Located at Victoria Quay. Excellent spot for affordable Aussie souvenirs, magnets, and local crafts. Note: Closes strictly at 5:00 PM!
+                    </div>
+                    <div class="transit-info"><i class="fa-solid fa-car"></i> 5 Mins to Fremantle Markets</div>
+                </div>
+
+                <div class="timeline-item" data-start="15:45" data-end="17:00">
+                    <div class="item-header">
+                        <div class="time-box">3:45 PM <span class="duration">1 Hr 15 Mins</span></div>
                         <label class="checkbox-container">
                             <input type="checkbox" onchange="toggleComplete(this)">
                             <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
@@ -892,24 +907,12 @@ body {
                     </div>
                     <div class="activity-title"><i class="fa-solid fa-store"></i> Fremantle Markets</div>
                     <div class="tip-box">
-                        <i class="fa-solid fa-bag-shopping"></i> <strong>Great Swap!</strong> Because today is Friday, the famous markets are officially OPEN! Time to hunt for local souvenirs and the famous Honey Cake.
+                        <i class="fa-solid fa-bag-shopping"></i> <strong>Great Swap!</strong> Because today is Friday, the famous markets are officially OPEN! Time to hunt for local souvenirs and the famous Honey Cake. Note: E Shed usually closes at 5:00 PM, but Fremantle Markets stays open until 8:00 PM on Fridays, giving you more flexibility here!
                     </div>
-                    <div class="transit-info"><i class="fa-solid fa-car"></i> Short Drive</div>
-                </div>
-
-<div class="timeline-item" data-start="16:45" data-end="17:00">
-                    <div class="item-header">
-                        <div class="time-box">4:45 PM <span class="duration">15 Mins</span></div>
-                        <label class="checkbox-container">
-                            <input type="checkbox" onchange="toggleComplete(this)">
-                            <div class="checkmark"><i class="fa-solid fa-check fa-xs"></i></div>
-                        </label>
-                    </div>
-                    <div class="activity-title"><i class="fa-solid fa-palette"></i> Rainbow Sea Containers</div>
                     <div class="transit-info"><i class="fa-solid fa-car"></i> 15 Mins to Beach</div>
                 </div>
 
-<div class="timeline-item" data-start="17:15" data-end="20:00">
+                <div class="timeline-item" data-start="17:15" data-end="20:00">
                     <div class="item-header">
                         <div class="time-box">5:15 PM <span class="duration">2.5 Hours</span></div>
                         <label class="checkbox-container">
@@ -925,22 +928,22 @@ body {
             </div>
         </div>
 
-<div id="day6" class="day-content">
+        <div id="day6" class="day-content">
             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/9f/23/d6/fremantle-markets.jpg?w=900&h=500&s=1" alt="Fruit Orchards" class="hero-img">
             <div class="day-subtitle">FRUIT PICKING + SHOPPING + AIRPORT ⭐⭐⭐⭐</div>
 
-<div class="attire-box">
+            <div class="attire-box">
                 <i class="fa-solid fa-shirt"></i> 
                 <div><strong>Today's Attire:</strong> Comfortable shoes for the orchards and shopping. Dress in layers since you will be heading straight to the airport tonight.</div>
             </div>
 
-<a href="https://www.google.com/maps/dir/Aveley,+WA/The+Fruit+Corner,+Pickering+Brook,+WA/Westfield+Carousel,+Cannington,+WA/South+Perth+Foreshore,+WA/Perth+Airport,+WA" target="_blank" class="map-btn">
+            <a href="https://www.google.com/maps/dir/Aveley+WA/The+Fruit+Corner,+Pickering+Brook/Westfield+Carousel/South+Perth+Foreshore/Perth+Airport+(PER)/" target="_blank" class="map-btn">
                 <i class="fa-solid fa-location-arrow"></i> Navigate Day 6
             </a>
 
-<p style="text-align: center; font-size: 0.85rem; color: var(--deep-teal); margin-bottom: 15px; font-weight: 600;">👉 BEST ending day</p>
+            <p style="text-align: center; font-size: 0.85rem; color: var(--deep-teal); margin-bottom: 15px; font-weight: 600;">👉 BEST ending day</p>
 
-<div class="timeline">
+            <div class="timeline">
                 <div class="timeline-item" data-start="09:00" data-end="11:30">
                     <div class="item-header">
                         <div class="time-box">9:00 AM <span class="duration">2.5 Hours</span></div>
@@ -961,7 +964,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> 30 Mins to Shopping</div>
                 </div>
 
-<div class="timeline-item" data-start="12:00" data-end="17:00">
+                <div class="timeline-item" data-start="12:00" data-end="17:00">
                     <div class="item-header">
                         <div class="time-box">12:00 PM <span class="duration">5 Hours</span></div>
                         <label class="checkbox-container">
@@ -976,7 +979,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> Short Drive</div>
                 </div>
 
-<div class="timeline-item" data-start="17:30" data-end="20:00">
+                <div class="timeline-item" data-start="17:30" data-end="20:00">
                     <div class="item-header">
                         <div class="time-box">5:30 PM <span class="duration">2.5 Hours</span></div>
                         <label class="checkbox-container">
@@ -991,7 +994,7 @@ body {
                     <div class="transit-info"><i class="fa-solid fa-car"></i> 15 Mins to Airport</div>
                 </div>
 
-<div class="timeline-item" data-start="22:00" data-end="23:59">
+                <div class="timeline-item" data-start="22:00" data-end="23:59">
                     <div class="item-header">
                         <div class="time-box">10:00 PM <span class="duration">Check-in</span></div>
                         <label class="checkbox-container">
@@ -1007,9 +1010,9 @@ body {
             </div>
         </div>
 
-</div>
+    </div>
 
-<script>
+    <script>
         // Tab Navigation
         function openDay(dayId) {
             document.querySelectorAll('.day-content').forEach(el => {
